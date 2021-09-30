@@ -1,0 +1,97 @@
+<div id="wrapper" class="toggled">
+  <!-- Sidebar -->
+  <div id="sidebar-wrapper">
+      <ul class="sidebar-nav">
+          <li> <a [routerLink]="['/admindashboard']" routerLinkActive="active">Dashboard</a> </li>
+          <li> <a [routerLink]="['/incubatorlist']" routerLinkActive="active" >Show Responce</a> </li>
+          <li> <a [routerLink]="['/adminabout']" routerLinkActive="active">About</a> </li>
+          <li> <a [routerLink]="['/adminservices']" routerLinkActive="active">Services</a> </li>
+          <li> <a [routerLink]="['/admincantact']" routerLinkActive="active">Contact</a> </li>
+      </ul>
+  </div>
+ <nav class="navbar navbar-expand navbar-dark bg-primary"> <a  id="menu-toggle" class="navbar-brand"><span class="navbar-toggler-icon"></span></a>
+</nav>
+
+
+        <div class="content-wrapper">
+          <div class="content-header">
+            <div class="container-fluid">
+              <div class="row mb-2">
+                <div class="col-sm-6">
+                  <h5 class="m-0 text-dark">Incubator List</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Main content -->
+          <section class="content">
+            <div class="container-fluid">
+
+              <div class="row">
+                <div class="card">
+
+                      <div class="table-responsive">
+                        <table class="table">
+                          <thead>
+                            <tr>
+                              <th scope="col">Sr no.</th>
+                              <th scope="col">id</th>
+                              <th scope="col">Incubator Name </th>
+                              <th scope="col">Address As </th>
+                              <th scope="col">Gender</th>
+                              <th scope="col"> Mobile Number </th>
+                              <th scope="col"> Personal Email </th>
+                              <th scope="col">Action</th>
+                            </tr>
+                          </thead>
+
+                          <tbody *ngFor="let item of dataSource; let i = index">
+                           <tr>
+
+                            <td>
+                             <div>{{i+1}}</div>
+                            </td>
+
+                           <td>
+                            <div> <a style="color: blue;" routerLink="" (click)="onClick(item)">{{item.id}}</a></div>
+                            </td>
+
+                           <td>
+                            <div>  {{item.title}}&nbsp;{{item.name}}</div>
+                            </td>
+
+                           <td>
+                            <div>{{item.address}}</div>
+                            </td>
+
+                           <td>
+                            <div> {{item.gender}}</div>
+                            </td>
+
+                            <td>
+                              <div > {{item.mobile}}</div>
+                              </td>
+
+                              <td>
+                                <div > {{item.personal_email}}</div>
+                                </td>
+
+                                <td>
+                                  <button (click)="onDeleteClick(item)" class="btn btn-sm btn-outline-danger">
+                                    <i class="fa fa-trash-o" aria-hidden="true"></i>
+                                  </button>
+                                  </td>
+                          </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                  </div>
+              </div>
+
+            </div>
+
+          </section>
+      </div>
+</div>
+

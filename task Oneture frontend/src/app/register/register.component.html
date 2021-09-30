@@ -1,0 +1,161 @@
+<div class="container">
+  <h3 style="text-align:center">Incubator Application Form</h3>
+
+  <div><br>
+    <p>Is your Startup developing a product or innovative service in sports? Do you already have a beta or a proof of concept? Send us as many details as possible about your Startup.
+      Startups will be selected taking into account these five elements:<br>
+
+      <li>Innovativeness of the idea</li>
+      <li>Business potential</li>
+      <li>Team</li>
+      <li> Scalability</li>
+      <li>Business plan</li>
+       If you already have a business plan, pictures or other documentation you can attach files using the space provided at the bottom of the form.</p>
+  <form [formGroup]="signupForm" (ngSubmit)="onRegister()" >
+    <br>
+    <div class="form-row">
+
+      <div class="col-md-4">
+        <label for="inputState">Title</label>
+        <select  formControlName="title" class="form-control" >
+          <option value="" disabled>Choose...</option>
+          <option value="Mr." >Mr.</option>
+          <option value="Mrs.">Mrs.</option>
+          <option value="Dr.">Dr.</option>
+          <option value="Miss.">Miss.</option>
+        </select>
+      </div>
+
+      <div class="col-md-8">
+        <label> Name<span class="lblError">*</span></label>
+        <input type="text" appAlphabets class="form-control" formControlName="name" placeholder="Enter Name">
+        <p class="lblError" *ngIf="signupForm.get('name').hasError('required') && !signupForm.get('name').pristine">  Name is Required!...</p>
+
+      </div>
+
+      <div class="col-md-12">
+        <label>Addressed As </label>
+        <input type="text" class="form-control" formControlName="address" placeholder="Enter Address">
+      </div>
+    </div>
+
+    <div>&nbsp;</div>
+    <div class="form-row">
+        <div class="form-group col-md-4">
+        <label>Gender<span class="lblError">*</span></label>
+              <div class="row">
+                  <div class="col-sm-4">
+                      <label class="radio-inline">
+                          <input type="radio"  value="Female"formControlName="gender">Female
+                      </label>
+                  </div>
+                  <div class="col-sm-4">
+                      <label class="radio-inline">
+                          <input type="radio" value="Male" formControlName="gender">Male
+                      </label>
+                  </div>
+              </div>
+      </div>
+
+    <div class="form-group col-md-4">
+      <label for="inputEmail4">Date of Birth<span class="lblError">*</span></label>
+      <input type="date"  class="form-control" formControlName="dob" >
+      <p class="lblError" *ngIf="signupForm.get('dob').hasError('required') && !signupForm.get('dob').pristine">Date of Birth is Required!...</p>
+    </div>
+
+    <div class="col-md-4">
+      <label for="validationTooltip01">Age</label>
+      <input type="text" class="form-control" formControlName="age" readonly value={{age}} placeholder="Age" >
+    </div>
+
+  </div>
+
+
+  <div class="form-row">
+      <div class="form-group col-md-4">
+        <label for="inputMobile">Personal Mobile No<span class="lblError">*</span></label>
+        <input type="text" formControlName="mobile" class="form-control" placeholder="Mobile Number">
+        <p class="lblError" *ngIf="signupForm.get('mobile').hasError('required') && !signupForm.get('mobile').pristine">Mobile number is Required!...</p>
+        <p class="lblError" *ngIf="signupForm.get('mobile').hasError('pattern') && !signupForm.get('mobile').pristine">Invalid mobile number!...</p>
+      </div>
+
+      <div class="form-group col-md-4">
+        <label for="inputEmail4">Personal Email<span class="lblError">*</span></label>
+          <input type="email" formControlName="personal_email" class="form-control" placeholder=" Personal Email">
+          <p class="lblError" *ngIf="signupForm.get('personal_email').hasError('required') && !signupForm.get('personal_email').pristine">Email is Required!...</p>
+          <p class="lblError" *ngIf="signupForm.get('personal_email').hasError('email') && !signupForm.get('personal_email').pristine">Invalid Email!...</p>
+      </div>
+
+    <div class="col-md-4">
+      <label for="inputEmail4">Official Email</label>
+      <input type="email" formControlName="official_email" class="form-control" placeholder="Official Email">
+      <p class="lblError" *ngIf="signupForm.get('official_email').hasError('email') && !signupForm.get('official_email').pristine">Invalid Email!...</p>
+   </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-12">
+      <label for="ideaDescription">Brief Description of your idea and what your Company does, in a few words.</label>
+      <textarea type="text" formControlName="ideaDescription" class="form-control"  rows="4" cols="50"></textarea>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-12">
+      <label for="componyRevenues">How will your Company generate Revenues?</label>
+      <textarea type="text" formControlName="componyRevenues" class="form-control"  rows="4" cols="50"></textarea>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-12">
+      <label for="teamDescription">Describe your Team (Past experiences of each Founder, relevant skills, education). Is your team dedicated full time to the project?</label>
+      <textarea type="text" formControlName="teamDescription" class="form-control"  rows="4" cols="50"></textarea>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-12">
+      <label for="productDescription">Describe your product: what are the needs that your product is responding to? What is the status of the product as of today?</label>
+      <textarea type="text" formControlName="productDescription" class="form-control"  rows="4" cols="50"></textarea>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-12">
+      <label for="customerDescription">Who is your Customer? Describe your target market.</label>
+      <textarea type="text" formControlName="customerDescription" class="form-control"  rows="4" cols="50"></textarea>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-12">
+      <label for="CompetitorsDescription">Who are your Competitors? How is your Product different from the one of your Competitors?
+      </label>
+      <textarea type="text" formControlName="CompetitorsDescription" class="form-control"  rows="4" cols="50"></textarea>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-12">
+      <label for="advantegesDescription">What is the competitive advantage of your Product or Service?</label>
+      <textarea type="text" formControlName="advantegesDescription" class="form-control"  rows="4" cols="50"></textarea>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-12">
+      <label for="selfDecision">Please add anything more you want to tell us</label>
+      <textarea type="text" formControlName="selfDecision" class="form-control"  rows="4" cols="50"></textarea>
+    </div>
+  </div>
+  <div>&nbsp;</div>
+
+
+  <p><span class="lblError">* Indicates the Field are Mandatory</span></p>
+<div class="form-group col-md-12">
+  <button type="submit"  class="btn btn-primary" [disabled]="signupForm.invalid" >Submit</button>&nbsp;&nbsp;
+</div>
+</form>
+
+</div>
+<div><br></div>
+<div><br></div>
+
+<div><br></div><div><br></div>
+<div><br></div>
+<div><br></div>
+<div><br></div>
+</div>

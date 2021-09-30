@@ -1,0 +1,36 @@
+<div class="column">
+  <div class="login-page col-12">
+    <div class="login-logo">
+    </div>
+    <div class="card col-4">
+      <div class="card-body login-card-body">
+        <p class="login-box-msg">Sign in</p>
+        <form action="#" (ngSubmit)="onLogIn()">
+          <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="userName" [(ngModel)]="userName" name="userName" >
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <span class="fas fa-envelope"></span>
+              </div>
+            </div>
+          </div>
+          <div class="input-group mb-3">
+            <input type="password" class="form-control" placeholder="Password" [(ngModel)]="password" name="password">
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <span class="fas fa-lock"></span>
+              </div>
+            </div>
+          </div>
+          <p style="color:red">{{warningMessage}}</p>
+          <div class="row">
+            <div class="col-12" style="text-align: right;">
+              <button type="submit" class="btn btn-primary">Sign In</button>
+            </div><br>
+
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  </div>

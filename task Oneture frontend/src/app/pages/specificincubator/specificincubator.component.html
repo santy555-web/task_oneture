@@ -1,0 +1,128 @@
+<div id="wrapper" class="toggled">
+  <!-- Sidebar -->
+  <div id="sidebar-wrapper">
+      <ul class="sidebar-nav">
+          <li> <a [routerLink]="['/admindashboard']" routerLinkActive="active">Dashboard</a> </li>
+          <li> <a [routerLink]="['/incubatorlist']" routerLinkActive="active" >Show Responce</a> </li>
+          <li> <a [routerLink]="['/adminabout']" routerLinkActive="active">About</a> </li>
+          <li> <a [routerLink]="['/adminservices']" routerLinkActive="active">Services</a> </li>
+          <li> <a [routerLink]="['/admincantact']" routerLinkActive="active">Contact</a> </li>
+      </ul>
+  </div>
+ <nav class="navbar navbar-expand navbar-dark bg-primary"> <a href="#menu-toggle" id="menu-toggle" class="navbar-brand"><span class="navbar-toggler-icon"></span></a>
+</nav>
+
+
+        <div class="content-wrapper">
+          <div class="content-header">
+            <div class="container-fluid">
+              <div class="row mb-2">
+                <div class="col-sm-6">
+                  <h5 style="color: dodgerblue">Incubator Responce</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <section class="content">
+            <div class="container-fluid">
+
+              <div class="row">
+                <div class="card">
+
+                      <div class="table-responsive">
+
+                        <table *ngFor="let item of dataSource let i=index">
+                             <tr>
+                               <th>Id</th>
+                               <td>{{item.id}}</td>
+                               <th>Name</th>
+                               <td>{{item.title}}&nbsp;{{item.name}}</td>
+
+                            </tr>
+
+                            <tr>
+                              <th>Address</th>
+                              <td>{{item.gender}}</td>
+                              <th>Date of Birth</th>
+                              <td>{{item.dob |date}}</td>
+                              </tr>
+
+                                 <tr>
+                                  <th>Age</th>
+                                  <td>{{item.age}}</td>
+                                  <th>Mobile No.</th>
+                                  <td>{{item.mobile}}</td>
+
+                                </tr>
+
+                                <tr>
+                                  <th>Personal Email</th>
+                                  <td>{{item.personal_email}}</td>
+                                    <th>Official Email</th>
+                                    <td>{{item.official_email}}</td>
+                                  </tr>
+                                  <br>
+                                  <tr>
+
+
+                                    <td colspan="5">
+                                      <b>Brief Description of your idea and what your Company does, in a few words.</b><br><br>
+                                      {{item.ideaDescription}}
+                                    </td>
+                                  </tr>
+                                  <tr>
+
+                                    <td colspan="5">
+                                      <b>How will your Company generate Revenues?</b><br><br>
+                                      {{item.componyRevenues}}</td>
+                                  </tr>
+
+                                  <tr>
+
+                                    <td colspan="5">
+                                      <b>Describe your Team (Past experiences of each Founder, relevant skills, education). Is your team dedicated full time to the project?</b><br><br>
+                                      {{item.teamDescription}}</td>
+                                  </tr>
+                                  <tr>
+
+                                    <td colspan="5">
+                                      <b>Describe your product: what are the needs that your product is responding to? What is the status of the product as of today?</b><br><br>
+                                      {{item.productDescription}}</td>
+                                  </tr>
+                                  <tr>
+
+                                    <td colspan="5">
+                                      <b>Who is your Customer? Describe your target market.</b><br><br>
+                                      {{item.customerDescription}}</td>
+                                  </tr>
+                                  <tr>
+
+                                    <td colspan="5">
+                                      <b>Who are your Competitors? How is your Product different from the one of your Competitors?</b><br><br>
+                                      {{item.CompetitorsDescription}}</td>
+                                  </tr>
+                                  <tr>
+
+                                    <td colspan="5">
+                                      <b>What is the competitive advantage of your Product or Service?</b><br><br>
+                                      {{item.advantegesDescription}}</td>
+                                  </tr>
+                                  <tr>
+
+                                    <td colspan="5">
+                                      <b>Please add anything more you want to tell us.</b><br><br>
+                                      {{item.selfDecision}}</td>
+                                  </tr>
+
+                        </table>
+
+                        </div>
+
+                    </div>
+                </div>
+              </div>
+            </section>
+
+      </div>
+</div>
+

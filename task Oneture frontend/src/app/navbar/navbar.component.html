@@ -1,0 +1,43 @@
+<nav class="navbar navbar-expand-lg navbar-light light">
+  <a class="navbar-brand" href="#">Oneture</a>
+
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="/">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <!-- <li class="nav-item">
+        <a class="nav-link" href="#">About us</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Services
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Team</a>
+          <a class="dropdown-item" href="#">Conluded Events</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Gallery</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#">Contact us</a>
+      </li> -->
+
+    </ul>
+    <li class="nav-item dropdown navbar-nav text-right">
+      <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-4" data-toggle="dropdown"
+        aria-haspopup="true" aria-expanded="false">
+        <i class="fa fa-user" aria-hidden="true"></i> Profile </a>
+      <div class="dropdown-menu dropdown-menu-right dropdown-info" aria-labelledby="navbarDropdownMenuLink-4">
+        <a class="dropdown-item" [routerLink]="['/']" routerLinkActive="active" >Register</a>
+
+        <a class="dropdown-item" [routerLink]="['/login']" routerLinkActive="active" >Login</a>
+
+       <a  class="dropdown-item" (click)="onLogout()" *ngIf="isLoggedIn$ | async">Logout</a>
+      </div>
+
+      </li>
+  </div>
+</nav>
